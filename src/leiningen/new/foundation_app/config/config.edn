@@ -1,0 +1,17 @@
+{:application {:name :{{name}}
+               :output-dir "resources/public"}
+ :aspects {:data-ui {:output-dir "js/data_ui"
+                     :output-to "js/data_ui/main.js"
+                     :source-map "js/data_ui/main.js.map"
+                     :optimizations :none
+                     :main {{namespace}}.simulated.start}
+           :development {:output-to "js/dev/main.js"
+                         :output-dir "js/dev"
+                         :source-map "js/dev/main.js.map"
+                         :optimizations :simple
+                         :main {{namespace}}.start}
+           :production {:optimizations :advanced
+                        :output-to "js/prod/main.js"
+                        :output-dir "js/prod"
+                        :source-map "js/prod/main.js.map"
+                        :main {{namespace}}.start}}}
